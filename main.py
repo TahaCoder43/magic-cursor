@@ -30,8 +30,8 @@ def handle_mouse(frame: np.ndarray) -> np.ndarray:
         mouse.release_click()
 
     on_mouse, wrist = landmarker.on_mouse(0.015, 0.01)
-    # if on_mouse:
-    #     mouse.move(wrist, 10000)
+    if on_mouse:
+        mouse.move(wrist, 10000)
 
     if has_clicked and on_mouse: 
         frame = landmarker.label_hand("Dragging", frame)
